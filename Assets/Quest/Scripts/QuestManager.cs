@@ -40,11 +40,11 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    private List<Quest> activeQuests = new List<Quest>();
-    private List<Quest> completedQuests = new List<Quest>();
+    [SerializeField] private List<Quest> activeQuests = new List<Quest>();
+    [SerializeField] private List<Quest> completedQuests = new List<Quest>();
 
-    private List<Quest> activeAchievements = new List<Quest>();
-    private List<Quest> completedAchievements = new List<Quest>();
+    [SerializeField] private List<Quest> activeAchievements = new List<Quest>();
+    [SerializeField] private List<Quest> completedAchievements = new List<Quest>();
 
     private QuestDatabase questDatatabase;
     private QuestDatabase achievementDatabase;

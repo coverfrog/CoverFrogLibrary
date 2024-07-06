@@ -345,6 +345,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f6bae754eed4746b7939bd4fcf3082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activeQuests: []
+  completedQuests: []
+  activeAchievements: []
+  completedAchievements: []
 --- !u!1 &1983484990
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589033292c2ed924e8f5c8fb46f93f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quest: {fileID: 0}
-  category: {fileID: 0}
-  target: {fileID: 0}
+  quest: {fileID: 11400000, guid: a506644cfda806a4f9699a8c44c65570, type: 2}
+  category: {fileID: 11400000, guid: f14ed087358342e4abd8b585c94c13fe, type: 2}
+  target: {fileID: 11400000, guid: 54159b462985dc44a854db23dbaf2571, type: 2}

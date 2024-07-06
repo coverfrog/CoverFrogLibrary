@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bebf0c008ad2ee24eb9784d6cd4572b5, type: 3}
   m_Name: Task_
   m_EditorClassIdentifier: 
-  category: {fileID: 0}
-  codeName: 
-  description: 
-  action: {fileID: 0}
-  targets: []
+  category: {fileID: 11400000, guid: f14ed087358342e4abd8b585c94c13fe, type: 2}
+  codeName: Demo
+  description: Demo
+  action: {fileID: 11400000, guid: cb3fccbddc161954f97b6029466891f5, type: 2}
+  targets:
+  - {fileID: 11400000, guid: 54159b462985dc44a854db23dbaf2571, type: 2}
   initialSuccessValue: {fileID: 0}
-  needSuccessToComplete: 0
+  needSuccessToComplete: 5
   canReceiveReportsDuringCompletion: 0
