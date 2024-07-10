@@ -7,8 +7,8 @@
 
 ### Code Develop Custom Rule
 
-Rule : "모든 값은 항상 배열로 주고 받을 수 있다는 전제로 함수를 작성 하기"
-Why?
+###### Rule : "모든 값은 항상 배열로 주고 받을 수 있다는 전제로 함수를 작성 하기"
+###### Why?
 
 복수의 데이터에서 단일 데이터를 추출하는 과정은 
 코드에 따라 시간 복잡도 차이는 생기겠지만 추출이 가능하고
@@ -23,8 +23,8 @@ Why?
 
 ***
 
-Rule : "여러 동일한 액션이 있다면 반드시 상위 관리자를 만들어 주기"
-Why?
+###### Rule : "여러 동일한 액션이 있다면 반드시 상위 관리자를 만들어 주기"
+###### Why?
 
 동일한 액션이 있는데 
 상위 관리자가 없다면 동일한 상태에서 다른 변화 값을 가질 경우
@@ -34,12 +34,12 @@ Why?
 
 ***
 
-Rule : "함수를 호출 하는게 누구인지 명시 하기"
-Exampe :
-  1 ) public void Recv(Pow pow, string msg)
-  2 ) public void Recv<T>(T pow, string msg) where T : Pow
-  3 ) public void Recv(Component sender, string msg)
-Why?
+###### Rule : "함수를 호출 하는게 누구인지 명시 하기"
+###### Exampe :
+  ###### 1 ) public void Recv(Pow pow, string msg)
+  ###### 2 ) public void Recv<T>(T pow, string msg) where T : Pow
+  ###### 3 ) public void Recv(Component sender, string msg)
+###### Why?
 
 함수의 호출자를 명시하는 근본적인 이유는 편리함 때문입니다.
 
