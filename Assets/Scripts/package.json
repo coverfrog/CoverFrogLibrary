@@ -1,7 +1,0 @@
-{
-    "name": "com.coverfrog.library",
-    "version": "1.0.0",
-    "displayName": "CoverFrog Library",
-    "description": "Library assets for CoveFrog",
-    "dependencies": {}
-  }
