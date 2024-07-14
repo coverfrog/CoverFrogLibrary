@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace Cf.Util
+namespace CoverFrog
 {
-    public static class CfUtil 
+    public static class Util 
     {
         [Conditional("UNITY_EDITOR")]
         public static void FindAllAssets<T>(Object sender, ref List<T> source) where T : Object

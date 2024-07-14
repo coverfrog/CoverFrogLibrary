@@ -1,7 +1,0 @@
-{
-  "name": "com.coverfrog.mypackage",
-  "displayName": "CoverFrog Library",
-  "version": "1.0.0",
-  "description": "My CoverFrog Library",
-  "dependencies": {}
-}
