@@ -3,7 +3,5 @@
   "displayName": "CoverFrog Library",
   "version": "1.0.0",
   "description": "My CoverFrog Library",
-  "dependencies": {
-    "com.coverfrog.mypackage": "https://github.com/coverfrog/CoverFrogLibrary/tree/main/Assets/__CfLibrary"
-  }
+  "dependencies": {}
 }
