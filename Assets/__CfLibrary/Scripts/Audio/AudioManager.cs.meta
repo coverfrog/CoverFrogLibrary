@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/__CfLibrary/Scripts/Audio/AudioManager.cs.meta
+guid: d1ca87de361cc554c9e3e94770526ce9
+========
 guid: 85cd2f0a67135fb48a5e6110adb62588
+>>>>>>>> afb06ac8a9ea3e3ce2a0009519666085200722f6:Assets/__Demo/Scripts/PlayerIdle.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
