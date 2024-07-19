@@ -15,6 +15,7 @@ namespace CoverFrog
         [Header("[ Audio Db ]")]
         [SerializeField] private AudioDatabase database;
 
+
         #region > Get
         
         private AudioSource GetSource(T audioType) => AudioDictionary[audioType.ToString()];
@@ -28,7 +29,6 @@ namespace CoverFrog
         public override void Awake()
         {
             base.Awake();
-            
             _ = AudioDictionary;
         }
 

@@ -11,28 +11,27 @@ namespace CoverFrog
 {
     public abstract class InputManager<T> : Singleton<InputManager<T>> where T : Enum
     {
+        private Dictionary<T, InputCode> _inputCodeDictionary;
         private InputModule _module;
 
-
-        //
-        
-        
-        
-        //
-        
-        private void Awake()
+        public override void Awake()
         {
+            base.Awake();
             _ = Module;
         }
-
-        private void Update()
-        {
-            Module.InputUpdate<T>();
-        }
         
         //
-        
-        
+
+        public void TryAdd(T t, InputCode inputCode)
+        {
+            if (_inputCodeDictionary.TryAdd(t, inputCode))
+            {
+                
+            }
+        }
+
+        //
+
         private InputModule Module => 
             _module ??= InitModule();
         

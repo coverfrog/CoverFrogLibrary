@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace CoverFrog
 {
-    public class InputPc : InputModule
+    [Serializable]
+    public class InputCode 
     {
-  
+      
     }
 }

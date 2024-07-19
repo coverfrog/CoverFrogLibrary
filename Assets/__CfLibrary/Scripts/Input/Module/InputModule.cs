@@ -7,6 +7,6 @@ namespace CoverFrog
 {
     public abstract class InputModule : MonoBehaviour
     {
-        public abstract void InputUpdate<T>() where T : Enum;
+
     }
 }
