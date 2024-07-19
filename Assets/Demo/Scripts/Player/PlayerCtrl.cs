@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CoverFrog;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -12,7 +13,7 @@ namespace Bird
         Move,
     }
 
-    public class PlayerCtrl : CoverFrog.UnitCtrl<PlayerState>
+    public class PlayerCtrl : UnitCtrl<PlayerState>
     {
         protected override void ChangeStated(Object sender, PlayerState prevState, PlayerState nextState)
         {

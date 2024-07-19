@@ -11,13 +11,5 @@ namespace CoverFrog
         [SerializeField] private List<AudioClip> audioClipList;
 
         public IReadOnlyList<AudioClip> AudioClipList => audioClipList;
-        
-#if UNITY_EDITOR
-        [ContextMenu("[ Cf ] Find All Audio Clip")]
-        private void InitInspector()
-        {
-            Util.FindAllAssets(this, ref audioClipList);
-        }
-#endif
     }
 }

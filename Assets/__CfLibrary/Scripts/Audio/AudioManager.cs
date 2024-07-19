@@ -13,24 +13,14 @@ namespace CoverFrog
     public abstract class AudioManager<T> : Singleton<AudioManager<T>> where T : Enum
     {
         [Header("[ Audio Db ]")]
-        [SerializeField] private List<AudioDatabase> audioDatabaseList;
+        [SerializeField] private AudioDatabase database;
 
         #region > Get
+        
         private AudioSource GetSource(T audioType) => AudioDictionary[audioType.ToString()];
 
-        private AudioClip GetClip(string clipName)
-        {
-            foreach (var audioDatabase in audioDatabaseList)
-            {
-                var clip = audioDatabase.AudioClipList.FirstOrDefault(x => x.name == clipName);
-                if (clip != null)
-                {
-                    return clip;
-                }
-            }
-
-            return null;
-        }
+        private AudioClip GetClip(string clipName) => database.AudioClipList.FirstOrDefault(x => x.name == clipName);
+        
         #endregion
 
         #region > Method
@@ -55,15 +45,17 @@ namespace CoverFrog
             source.clip = clip;
             source.Play();
         }
+        
         #endregion
 
         #region > Dictionary
+        
         private Dictionary<string, AudioSource> _audioDictionary;
 
         private Dictionary<string, AudioSource> AudioDictionary =>
-            _audioDictionary ??= Init();
+            _audioDictionary ??= DictionaryInit();
         
-        private Dictionary<string, AudioSource> Init()
+        private Dictionary<string, AudioSource> DictionaryInit()
         {
             var audioDictionary = new Dictionary<string, AudioSource>();
             var enumNameArray = Enum.GetNames(typeof(T));
@@ -87,41 +79,7 @@ namespace CoverFrog
 
             newSource = obj.AddComponent<AudioSource>();
         }
-        #endregion
-
-        #region > AudioDatabase
-#if UNITY_EDITOR
-        protected void AudioDatabaseFindOrCreate()
-        {
-            Util.FindAllAssets(this, ref audioDatabaseList );
-
-            var audioDatabaseCount = audioDatabaseList.Count;
-            switch (audioDatabaseCount)
-            {
-                case 0:  // create
-                    AudioDatabaseCreate(ref audioDatabaseList, out var savePath);
-                    AudioDatabaseReport("Create!");
-                    AudioDatabaseReport($"Save Path : {savePath}");
-                    break;
-                case 1:  // good
-                    AudioDatabaseReport("Find Success!");
-                    break;
-                default: // warring
-                    AudioDatabaseReport("Multiple Databases Exist!");
-                    break;
-            }
-        }
-
-        private void AudioDatabaseCreate(ref List<AudioDatabase> audioDatabases, out string savePath)
-        {
-            savePath = Path.Combine(Application.dataPath, "Resources");
-        }
-
-        private void AudioDatabaseReport(string message)
-        {
-            Debug.Log(message);
-        }
-#endif
+        
         #endregion
     }
 }
