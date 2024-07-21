@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using CoverFrog;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 namespace Bird
@@ -18,7 +20,7 @@ namespace Bird
         //
 
         private IFsmState<DecisionOption> 
-            _inActiveState, _unSelectedState, _selectedState;
+            _setupState, _unSelectedState, _selectedState;
         
         private FsmContext<DecisionOption> _context;
 
@@ -29,16 +31,14 @@ namespace Bird
         {
             _context = new FsmContext<DecisionOption>(this);
 
-            _inActiveState = gameObject.AddComponent<DecisionOptionStateInActive>();
+            _setupState = gameObject.AddComponent<DecisionOptionStateSetup>();
             _unSelectedState = gameObject.AddComponent<DecisionOptionStateUnSelected>();
             _selectedState = gameObject.AddComponent<DecisionOptionStateSelected>();
             
-            _context.Transition(_inActiveState);
+            _context.Transition(_setupState);
 
             return _context;
         }
-
-        public void ToInactive() => Context.Transition(_inActiveState);
         
         public void ToUnSelected() => Context.Transition(_unSelectedState);
         
@@ -46,7 +46,7 @@ namespace Bird
         
         //
 
-        public void InitDisplayName(Object sender, string displayName)
+        public void SetDisplayName(Object sender, string displayName)
         {
             _displayName = displayName;
         }
@@ -54,6 +54,14 @@ namespace Bird
         public void SetDisplayNameByFormat(Object sender, string displayNameFormat)
         {
             textDisplayName.text = string.Format(displayNameFormat, _displayName);
+        }
+
+        public void SetButtonAction(Object sender, UnityAction<DecisionOption> onMoveIndex)
+        {
+            GetComponent<Button>().onClick.AddListener(() =>
+            {
+                onMoveIndex.Invoke(this);
+            });
         }
         
         //

@@ -5,7 +5,7 @@ using CoverFrog;
 
 namespace Bird
 {
-    public class DecisionOptionStateInActive : MonoBehaviour, IFsmState<DecisionOption>
+    public class DecisionOptionStateSetup : MonoBehaviour, IFsmState<DecisionOption>
     {
         public DecisionOption Owner { get; set; }
 
