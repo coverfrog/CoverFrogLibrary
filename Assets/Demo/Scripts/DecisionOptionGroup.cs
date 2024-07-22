@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CoverFrog;
 
 namespace Bird
 {
+    [RequireComponent(typeof(VerticalScrollToMove))]
     public class DecisionOptionGroup : MonoBehaviour
     {
         private enum Direction
@@ -17,6 +19,7 @@ namespace Bird
 
         [SerializeField] private List<DecisionOption> decisionOptionList;
 
+        private VerticalScrollToMove _verticalScrollToMove;
         private int _selectedIndex;
 
         //
@@ -55,6 +58,7 @@ namespace Bird
             decisionOptionList[nextIndex].ToSelectedState();
 
             _selectedIndex = nextIndex;
+            _verticalScrollToMove.ToIndex(_selectedIndex, 100);
         }
 
         //
@@ -62,6 +66,7 @@ namespace Bird
         private void Awake()
         {
             _selectedIndex = 0;
+            _verticalScrollToMove = GetComponent<VerticalScrollToMove>();
             
             decisionOptionList.ForEach(x =>
             {
