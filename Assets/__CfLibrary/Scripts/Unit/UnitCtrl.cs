@@ -21,8 +21,9 @@ namespace CoverFrog
         #region > Option
         [Header("[ Option ]")]
         [SerializeField] protected bool isCanControl;
-        
 
+        public bool IsCanControl => isCanControl;
+        
         #endregion
         
         #region > State

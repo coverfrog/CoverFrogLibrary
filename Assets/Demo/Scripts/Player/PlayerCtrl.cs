@@ -9,12 +9,21 @@ namespace Bird
 {
     public enum PlayerState
     {
+        InActive,
+        Setup,
         Idle,
         Move,
     }
 
     public class PlayerCtrl : UnitCtrl<PlayerState>
     {
+        #region > Unity 
+        private void Awake()
+        {
+            ChangeState(this, PlayerState.Setup);
+        }
+        #endregion
+
         protected override void ChangeStated(Object sender, PlayerState prevState, PlayerState nextState)
         {
             

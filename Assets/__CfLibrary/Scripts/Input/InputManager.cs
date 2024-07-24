@@ -20,8 +20,6 @@ namespace CoverFrog
             _ = Module;
         }
         
-        //
-
         public void TryAdd(T t, InputCode inputCode)
         {
             if (_inputCodeDictionary.TryAdd(t, inputCode))
@@ -29,8 +27,6 @@ namespace CoverFrog
                 
             }
         }
-
-        //
 
         private InputModule Module => 
             _module ??= InitModule();
@@ -44,8 +40,6 @@ namespace CoverFrog
 
             return null;
         }
-        
-        //
 
         private static bool AnyString(string envName, params string[] names) => names.Any(x => x == envName);
     }
