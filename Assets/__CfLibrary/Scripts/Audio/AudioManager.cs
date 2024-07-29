@@ -34,18 +34,13 @@ namespace CoverFrog
 
         public void Play(Object sender, T audioType, string audioName)
         {
-            Play(audioType, audioName);
-        }
-
-        private void Play(T audioType, string audioName)
-        {
             var source = GetSource(audioType);
             var clip = GetClip(audioName);
 
             source.clip = clip;
             source.Play();
         }
-        
+
         #endregion
 
         #region > Dictionary

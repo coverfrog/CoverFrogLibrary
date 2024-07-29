@@ -18,27 +18,9 @@ namespace CoverFrog
         
         #endregion
         
-        #region > Option
-        [Header("[ Option ]")]
-        [SerializeField] protected bool isCanControl;
-
-        public bool IsCanControl => isCanControl;
-        
-        #endregion
-        
         #region > State
         [Header("[ State ]")]
         [SerializeField] protected T currentState;
-
-        protected void ChangeState(Object sender, T nextState)
-        {
-            var prevState = currentState;
-            currentState = nextState;
-
-            ChangeStated(sender, prevState, nextState);
-        }
-
-        protected abstract void ChangeStated(Object sender, T prevState, T nextState);
         #endregion
     }
 }
