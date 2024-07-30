@@ -5,13 +5,8 @@ using UnityEngine;
 
 namespace CoverFrog
 {
-    public class CameraCtrl : MonoBehaviour
+    public abstract class CameraCtrl : MonoBehaviour
     {
-        private Camera _cam;
-
-        private void Awake()
-        {
-            _cam = transform.GetChild(0).GetComponent<Camera>();
-        }
+        
     }
 }

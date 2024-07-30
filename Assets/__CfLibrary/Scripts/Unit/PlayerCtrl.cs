@@ -14,6 +14,9 @@ namespace CoverFrog
 
     public class PlayerCtrl : UnitCtrl<PlayerState>
     {
-      
+        private void OnEnable()
+        {
+            CameraFollow.SetTarget(this, transform);
+        }
     }
 }
