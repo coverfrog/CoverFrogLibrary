@@ -1,30 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace CoverFrog
 {
-    public class CameraFollowFirstPerson : CameraFollow
+    public class CameraFollowFirstPerson : MonoBehaviour
     {
         [Header("[ Option ]")] 
         [SerializeField] private float height = 20;
         [SerializeField] private float distance = 20;
         
-        private Camera _followCam;
+        [Header("[ Cam ]")]
+        [SerializeField] private Camera cam;
 
-        protected override Camera FollowCam =>
-            _followCam ??= transform.GetChild(0).GetComponent<Camera>();
+        private static Transform _target;
 
-        protected override void Follow()
+        public static void SetTarget(Object sender, Transform target)
         {
-            if(!Target)
-                return;
+            _target = target;
+        }
 
-            transform.position =
-                Target.position +
-                Vector3.down * distance +
-                Vector3.up * height;
+        private void LateUpdate()
+        {
+            
         }
     }
 }

@@ -14,9 +14,18 @@ namespace CoverFrog
 
     public class PlayerCtrl : UnitCtrl<PlayerState>
     {
+        [Header("[ Ctrl ]")]
+        [SerializeField] private PlayerMove playerMove;
+        [SerializeField] private PlayerAnimator playerAnimator;
+        
         private void OnEnable()
         {
-            CameraFollow.SetTarget(this, transform);
+            CameraFollowFirstPerson.SetTarget(this, transform);
+        }
+
+        private void Update()
+        {
+            playerAnimator.SetBool(PlayerAnimKey.IsMove, playerMove.IsMove);
         }
     }
 }
