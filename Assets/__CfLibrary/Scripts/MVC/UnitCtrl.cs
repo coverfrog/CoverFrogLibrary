@@ -6,21 +6,31 @@ using Object = UnityEngine.Object;
 
 namespace CoverFrog
 {
-    public abstract class UnitCtrl<T> : MonoBehaviour where T : Enum
+    // Ctrl Model, View
+    public abstract class UnitCtrl : MonoBehaviour
     {
         #region > Text
         [Header("[ Text ]")]
         [SerializeField] private string codeName;
+        [SerializeField] private string displayName;
         [SerializeField, TextArea] private string description;
-
+        
         public string CodeName => codeName;
+        public string DisplayName => displayName;
         public string Description => description;
-        
         #endregion
-        
-        #region > State
-        [Header("[ State ]")]
-        [SerializeField] protected T currentState;
+
+        #region > Mvc
+        [Header("[ Mvc ]")] 
+        [SerializeField] private UnitView view;
+        [SerializeField] private UnitModel model;
+        #endregion
+
+        #region > Unity
+        private void Start()
+        {
+            
+        }
         #endregion
     }
 }

@@ -1,12 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace CoverFrog
 {
-    public class PlayerCtrl : UnitCtrl
+    // Display, Input
+    public class UnitView : MonoBehaviour
     {
         
     }
