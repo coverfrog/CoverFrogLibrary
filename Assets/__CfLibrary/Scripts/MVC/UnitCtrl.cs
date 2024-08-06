@@ -7,13 +7,13 @@ using Object = UnityEngine.Object;
 namespace CoverFrog
 {
     // Ctrl Model, View
-    public abstract class UnitCtrl : MonoBehaviour
+    public abstract class UnitCtrl<TView, TModel> : MonoBehaviour where TView : UnitView where TModel : UnitModel
     {
         #region > Text
         [Header("[ Text ]")]
-        [SerializeField] private string codeName;
-        [SerializeField] private string displayName;
-        [SerializeField, TextArea] private string description;
+        [SerializeField] protected string codeName;
+        [SerializeField] protected string displayName;
+        [SerializeField, TextArea] protected string description;
         
         public string CodeName => codeName;
         public string DisplayName => displayName;
@@ -22,15 +22,8 @@ namespace CoverFrog
 
         #region > Mvc
         [Header("[ Mvc ]")] 
-        [SerializeField] private UnitView view;
-        [SerializeField] private UnitModel model;
-        #endregion
-
-        #region > Unity
-        private void Start()
-        {
-            
-        }
+        [SerializeField] protected TView view;
+        [SerializeField] protected TModel model;
         #endregion
     }
 }

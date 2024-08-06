@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CoverFrog
 {
     // Display, Input
-    public class UnitView : MonoBehaviour
+    public abstract class UnitView : MonoBehaviour
     {
         
     }
